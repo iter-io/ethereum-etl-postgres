@@ -1,3 +1,5 @@
+DROP TRIGGER IF EXISTS blocks ON blocks;
+
 CREATE TRIGGER blocks
 	AFTER INSERT OR UPDATE
 	ON blocks

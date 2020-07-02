@@ -1,0 +1,7 @@
+DROP TRIGGER IF EXISTS fees_avg ON blocks;
+
+CREATE TRIGGER fees_avg
+	AFTER INSERT OR UPDATE
+	ON blocks
+	FOR EACH STATEMENT
+EXECUTE PROCEDURE fees_notify('fees_avg', 'avg', 10);
